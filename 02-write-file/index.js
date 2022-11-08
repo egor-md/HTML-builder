@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-let pathToFile = __dirname + '\\text.txt';
+let pathToFile = path.join(__dirname, 'text.txt');
 let output = fs.createWriteStream(pathToFile, 'utf-8');
 
 const process = require('process');
-process.stdout.write('Hi, enter text please');
+process.stdout.write('Hi, enter text please \n');
 
 process.on('SIGINT', function () {
     process.exit();
